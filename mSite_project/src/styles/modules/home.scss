@@ -22,11 +22,12 @@
     @include flex-direction(column);
     .content{
         @include flex();
+        width:100%;
     }
     nav{
         height:.44rem;
         background: #fff;
-        @include boxShadow(0,0,16px,6px,#eee);
+        @include boxShadow(0,0,.16rem,.06rem,#eee);
         ul{
             height:100%; 
             @include flexbox();

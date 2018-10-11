@@ -1,10 +1,10 @@
-const homeTpl = require('../views/home.html');
+import homeTpl from '../views/home.html';
 
 const render = () => {
     $("#root").html(homeTpl);
     console.log(homeTpl)
 }
 
-module.exports = {
+export default {
     render
-}
+  }

@@ -3214,10 +3214,23 @@ eval("var g;\r\n\r\n// This works in non-strict mode\r\ng = (function() {\r\n\tr
 /*!****************************!*\
   !*** ./src/scripts/app.js ***!
   \****************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("var homeController = __webpack_require__(/*! ./controllers/home.js */ \"./src/scripts/controllers/home.js\");\n\nhomeController.render();\n\n//# sourceURL=webpack:///./src/scripts/app.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _controllers_home_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./controllers/home.js */ \"./src/scripts/controllers/home.js\");\n/* harmony import */ var _controllers_category_category_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./controllers/category/category.js */ \"./src/scripts/controllers/category/category.js\");\n\n\n_controllers_home_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"].render();\n_controllers_category_category_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"].render();\n\n//# sourceURL=webpack:///./src/scripts/app.js?");
+
+/***/ }),
+
+/***/ "./src/scripts/controllers/category/category.js":
+/*!******************************************************!*\
+  !*** ./src/scripts/controllers/category/category.js ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _views_category_category_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../views/category/category.html */ \"./src/scripts/views/category/category.html\");\n/* harmony import */ var _views_category_category_html__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_views_category_category_html__WEBPACK_IMPORTED_MODULE_0__);\n\n\nvar render = function render() {\n  $('.content').html(_views_category_category_html__WEBPACK_IMPORTED_MODULE_0___default.a);\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  render: render\n});\n\n//# sourceURL=webpack:///./src/scripts/controllers/category/category.js?");
 
 /***/ }),
 
@@ -3225,10 +3238,22 @@ eval("var homeController = __webpack_require__(/*! ./controllers/home.js */ \"./
 /*!*****************************************!*\
   !*** ./src/scripts/controllers/home.js ***!
   \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("var homeTpl = __webpack_require__(/*! ../views/home.html */ \"./src/scripts/views/home.html\");\n\nvar render = function render() {\n  $(\"#root\").html(homeTpl);\n  console.log(homeTpl);\n};\n\nmodule.exports = {\n  render: render\n};\n\n//# sourceURL=webpack:///./src/scripts/controllers/home.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _views_home_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../views/home.html */ \"./src/scripts/views/home.html\");\n/* harmony import */ var _views_home_html__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_views_home_html__WEBPACK_IMPORTED_MODULE_0__);\n\n\nvar render = function render() {\n  $(\"#root\").html(_views_home_html__WEBPACK_IMPORTED_MODULE_0___default.a);\n  console.log(_views_home_html__WEBPACK_IMPORTED_MODULE_0___default.a);\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  render: render\n});\n\n//# sourceURL=webpack:///./src/scripts/controllers/home.js?");
+
+/***/ }),
+
+/***/ "./src/scripts/views/category/category.html":
+/*!**************************************************!*\
+  !*** ./src/scripts/views/category/category.html ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = \"<header>    <div>        <i class=\\\"yo-ico\\\">&#xe625;</i>        <input type=\\\"text\\\" value=\\\"搜索专业人才为您服务，如:包装设计\\\">    </div>    <i class=\\\"yo-ico\\\">&#xe66f;</i></header>\"\n\n//# sourceURL=webpack:///./src/scripts/views/category/category.html?");
 
 /***/ }),
 
