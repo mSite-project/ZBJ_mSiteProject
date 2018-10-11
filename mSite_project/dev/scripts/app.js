@@ -3218,7 +3218,7 @@ eval("var g;\r\n\r\n// This works in non-strict mode\r\ng = (function() {\r\n\tr
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _controllers_home_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./controllers/home.js */ \"./src/scripts/controllers/home.js\");\n/* harmony import */ var _controllers_category_category_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./controllers/category/category.js */ \"./src/scripts/controllers/category/category.js\");\n\n\n_controllers_home_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"].render();\n_controllers_category_category_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"].render();\n\n//# sourceURL=webpack:///./src/scripts/app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _utils_router_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils/router.js */ \"./src/scripts/utils/router.js\");\n/* harmony import */ var _controllers_home_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./controllers/home.js */ \"./src/scripts/controllers/home.js\");\n/* harmony import */ var _controllers_category_category_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./controllers/category/category.js */ \"./src/scripts/controllers/category/category.js\");\n/* harmony import */ var _controllers_home_home_content_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./controllers/home/home-content.js */ \"./src/scripts/controllers/home/home-content.js\");\n/* harmony import */ var _controllers_requirement_requirement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./controllers/requirement/requirement.js */ \"./src/scripts/controllers/requirement/requirement.js\");\n/* harmony import */ var _controllers_search_search_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./controllers/search/search.js */ \"./src/scripts/controllers/search/search.js\");\n/* harmony import */ var _controllers_profile_profile_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./controllers/profile/profile.js */ \"./src/scripts/controllers/profile/profile.js\");\n\n\n\n\n\n\n\n_controllers_home_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"].render();\nvar router = new _utils_router_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"]();\nrouter.init();\nrouter.route('#home', _controllers_home_home_content_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"].render);\nrouter.route('#category', _controllers_category_category_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"].render);\nrouter.route(\"#requirement\", _controllers_requirement_requirement_js__WEBPACK_IMPORTED_MODULE_4__[\"default\"].render);\nrouter.route('#search', _controllers_search_search_js__WEBPACK_IMPORTED_MODULE_5__[\"default\"].render);\nrouter.route('#profile', _controllers_profile_profile_js__WEBPACK_IMPORTED_MODULE_6__[\"default\"].render);\n\n//# sourceURL=webpack:///./src/scripts/app.js?");
 
 /***/ }),
 
@@ -3242,7 +3242,67 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _vie
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _views_home_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../views/home.html */ \"./src/scripts/views/home.html\");\n/* harmony import */ var _views_home_html__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_views_home_html__WEBPACK_IMPORTED_MODULE_0__);\n\n\nvar render = function render() {\n  $(\"#root\").html(_views_home_html__WEBPACK_IMPORTED_MODULE_0___default.a);\n  console.log(_views_home_html__WEBPACK_IMPORTED_MODULE_0___default.a);\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  render: render\n});\n\n//# sourceURL=webpack:///./src/scripts/controllers/home.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _views_home_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../views/home.html */ \"./src/scripts/views/home.html\");\n/* harmony import */ var _views_home_html__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_views_home_html__WEBPACK_IMPORTED_MODULE_0__);\n\n\nvar render = function render() {\n  $(\"#root\").html(_views_home_html__WEBPACK_IMPORTED_MODULE_0___default.a);\n  changeTab();\n};\n\nvar changeTab = function changeTab() {\n  $('nav li').on('tap', function () {\n    var hashs = ['#home', '#category', '#requirement', '#search', '#profile'];\n    location.hash = hashs[$(this).index()];\n    $(this).addClass('active').siblings().removeClass('active');\n  });\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  render: render\n});\n\n//# sourceURL=webpack:///./src/scripts/controllers/home.js?");
+
+/***/ }),
+
+/***/ "./src/scripts/controllers/home/home-content.js":
+/*!******************************************************!*\
+  !*** ./src/scripts/controllers/home/home-content.js ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _views_home_home_index_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../views/home/home-index.html */ \"./src/scripts/views/home/home-index.html\");\n/* harmony import */ var _views_home_home_index_html__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_views_home_home_index_html__WEBPACK_IMPORTED_MODULE_0__);\n\n\nvar render = function render() {\n  $('.content').html(_views_home_home_index_html__WEBPACK_IMPORTED_MODULE_0___default.a);\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  render: render\n});\n\n//# sourceURL=webpack:///./src/scripts/controllers/home/home-content.js?");
+
+/***/ }),
+
+/***/ "./src/scripts/controllers/profile/profile.js":
+/*!****************************************************!*\
+  !*** ./src/scripts/controllers/profile/profile.js ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _views_profile_profile_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../views/profile/profile.html */ \"./src/scripts/views/profile/profile.html\");\n/* harmony import */ var _views_profile_profile_html__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_views_profile_profile_html__WEBPACK_IMPORTED_MODULE_0__);\n\n\nvar render = function render() {\n  $('.content').html(_views_profile_profile_html__WEBPACK_IMPORTED_MODULE_0___default.a);\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  render: render\n});\n\n//# sourceURL=webpack:///./src/scripts/controllers/profile/profile.js?");
+
+/***/ }),
+
+/***/ "./src/scripts/controllers/requirement/requirement.js":
+/*!************************************************************!*\
+  !*** ./src/scripts/controllers/requirement/requirement.js ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _views_requirement_requirement_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../views/requirement/requirement.html */ \"./src/scripts/views/requirement/requirement.html\");\n/* harmony import */ var _views_requirement_requirement_html__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_views_requirement_requirement_html__WEBPACK_IMPORTED_MODULE_0__);\n\n\nvar render = function render() {\n  $('.content').html(_views_requirement_requirement_html__WEBPACK_IMPORTED_MODULE_0___default.a);\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  render: render\n});\n\n//# sourceURL=webpack:///./src/scripts/controllers/requirement/requirement.js?");
+
+/***/ }),
+
+/***/ "./src/scripts/controllers/search/search.js":
+/*!**************************************************!*\
+  !*** ./src/scripts/controllers/search/search.js ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _views_search_search_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../views/search/search.html */ \"./src/scripts/views/search/search.html\");\n/* harmony import */ var _views_search_search_html__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_views_search_search_html__WEBPACK_IMPORTED_MODULE_0__);\n\n\nvar render = function render() {\n  $('.content').html(_views_search_search_html__WEBPACK_IMPORTED_MODULE_0___default.a);\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  render: render\n});\n\n//# sourceURL=webpack:///./src/scripts/controllers/search/search.js?");
+
+/***/ }),
+
+/***/ "./src/scripts/utils/router.js":
+/*!*************************************!*\
+  !*** ./src/scripts/utils/router.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nfunction Router() {\n  this.routes = {};\n  this.currentHash = '';\n}\n\nvar noop = function noop() {}; // 路由注册\n\n\nRouter.prototype.route = function (hash, cb) {\n  this.currentHash = hash;\n  this.routes[this.currentHash] = cb || noop;\n}; // 路由刷新\n\n\nRouter.prototype.refresh = function () {\n  var hash = location.hash || '#home';\n  this.currentHash = hash;\n  this.routes[this.currentHash]();\n  this.switchTabbar();\n}; // tabbar switch\n\n\nRouter.prototype.switchTabbar = function () {\n  var hashs = ['#home', '#category', '#requirement', '#search', '#profile'];\n  var index = hashs.indexOf(this.currentHash);\n  $('nav li').eq(index).addClass('active').siblings().removeClass('active');\n}; // 路由切换监听\n\n\nRouter.prototype.init = function () {\n  window.addEventListener('load', this.refresh.bind(this));\n  window.addEventListener('hashchange', this.refresh.bind(this));\n};\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Router);\n\n//# sourceURL=webpack:///./src/scripts/utils/router.js?");
 
 /***/ }),
 
@@ -3265,6 +3325,50 @@ eval("module.exports = \"<header>    <div>        <i class=\\\"yo-ico\\\">&#xe62
 /***/ (function(module, exports) {
 
 eval("module.exports = \"<div class=\\\"home-container\\\">    <div class=\\\"content\\\"></div>    <nav>        <ul>            <li class=\\\"active\\\">                <i class=\\\"yo-ico\\\">&#xe60f;</i>                 <b>首页</b>            </li>            <li>                <i class=\\\"yo-ico\\\">&#xe615;</i>                 <b>类目</b>            </li>            <li>                                <i class=\\\"yo-ico\\\">&#xe604;</i>                                 <b>发需求</b>            </li>            <li>                <i class=\\\"yo-ico\\\">&#xe64b;</i>                 <b>发现</b>            </li>            <li>                <i class=\\\"yo-ico\\\">&#xe62a;</i>                 <b>我的</b>            </li>        </ul>    </nav></div>\"\n\n//# sourceURL=webpack:///./src/scripts/views/home.html?");
+
+/***/ }),
+
+/***/ "./src/scripts/views/home/home-index.html":
+/*!************************************************!*\
+  !*** ./src/scripts/views/home/home-index.html ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = \"<div>    home page</div>\"\n\n//# sourceURL=webpack:///./src/scripts/views/home/home-index.html?");
+
+/***/ }),
+
+/***/ "./src/scripts/views/profile/profile.html":
+/*!************************************************!*\
+  !*** ./src/scripts/views/profile/profile.html ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = \"<div>    profile page</div>\"\n\n//# sourceURL=webpack:///./src/scripts/views/profile/profile.html?");
+
+/***/ }),
+
+/***/ "./src/scripts/views/requirement/requirement.html":
+/*!********************************************************!*\
+  !*** ./src/scripts/views/requirement/requirement.html ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = \"<div>    发需求</div>\"\n\n//# sourceURL=webpack:///./src/scripts/views/requirement/requirement.html?");
+
+/***/ }),
+
+/***/ "./src/scripts/views/search/search.html":
+/*!**********************************************!*\
+  !*** ./src/scripts/views/search/search.html ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+eval("module.exports = \"<div>    search page</div>\"\n\n//# sourceURL=webpack:///./src/scripts/views/search/search.html?");
 
 /***/ }),
 
