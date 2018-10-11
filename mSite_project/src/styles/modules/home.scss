@@ -1,0 +1,79 @@
+@font-face {
+    font-family: 'yofont';
+    src: url('/iconfonts/iconfont.eot');
+    src: url('/iconfonts/iconfont.eot?#iefix') format('embedded-opentype'),
+    url('/iconfonts/iconfont.woff') format('woff'),
+    url('/iconfonts/iconfont.ttf') format('truetype'),
+    url('/iconfonts/iconfont.svg#iconfont') format('svg');
+  }
+@mixin  boxShadow($x,$y,$z,$m,$color) {
+    box-shadow: $x $y $z $m $color;
+    -webkit-box-shadow: $x $y $z $m $color;
+    -o-box-shadow: $x $y $z $m $color;
+    -moz-box-shadow: $x $y $z $m $color;
+    -ms-box-shadow: $x $y $z $m $color;
+}
+#root{
+    height:100%;
+}
+.home-container{
+    height:100%;
+    @include flexbox();
+    @include flex-direction(column);
+    .content{
+        @include flex();
+    }
+    nav{
+        height:.44rem;
+        background: #fff;
+        @include boxShadow(0,0,16px,6px,#eee);
+        ul{
+            height:100%; 
+            @include flexbox();
+            @include flex-direction(row);
+            @include justify-content(space-around);
+            @include align-items(center);
+            li{
+                
+                height: 100%;
+                @include flexbox();
+                @include flex-direction(column);
+                @include justify-content(space-around);
+                @include align-items(center);
+                color:#999;
+                i{
+                    font-size:.22rem;
+                    display: block;
+                    width:.22rem;
+                    height:.22rem;
+                    line-height: .22rem;
+                }
+                b{
+                    font-weight:100;
+                    font-size:.11rem;
+                }
+                &:nth-child(3) {
+                   
+                    margin-top:-0.23rem;
+                    i{
+                        display: block;
+                        width:.44rem;
+                        height:.44rem;
+                        line-height: .44rem;
+                        font-size: .44rem;
+                        color:#f60;
+                    }
+                    b{
+                        font-weight:100;
+                        font-size:.11rem;
+                    }
+                   
+                }
+            }
+            .active{
+                color:#f60;
+            }
+           
+        }
+     }
+}
