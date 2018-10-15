@@ -21,6 +21,8 @@
     @include flexbox();
     @include flex-direction(column);
     .content{
+        @include flexbox();
+        @include flex-direction(column);
         @include flex();
         width:100%;
     }
