@@ -12,8 +12,8 @@
                 {{#compare showType 2}}
             <ul class="cate-content-list-hot">
                 {{#each contents}}
-                <li>
-                    <a href="##">
+                <li data-targetParam="{{targetInfo.targetParam1}}">
+                    <a href="javascript:void(0)">
                         <img src="{{pic}}" alt="">
                         <span>{{text}}</span>
                     </a>
@@ -24,8 +24,8 @@
                 {{#compare showType 1}}
             <ul class="cate-content-list">
                     {{#each contents}}
-                <li>
-                    <a href="##">
+                <li  data-targetParam="{{targetInfo.targetParam1}}">
+                    <a href="javascript:void(0)">
                         <span>{{text}}</span>
                     </a>
                 </li>
@@ -111,7 +111,7 @@
                 <ul>
                     {{#each moreDataSource}}
                     <li>
-                        <a href="##" class="item-img">
+                        <a href="javascript:void(0)" class="item-img">
                             <img src="{{imgUrl}}" alt="">
                         </a>
                         <div class="item-content">

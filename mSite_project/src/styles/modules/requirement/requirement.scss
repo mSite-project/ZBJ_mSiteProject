@@ -1,0 +1,453 @@
+header{
+    width:100%;
+    height:.44rem;
+    background: #fff;
+    padding:0 .15rem;
+    @include flexbox();
+    @include flex-direction(row);
+    @include justify-content(space-between);
+    @include align-items(center);
+    @include border(0 0 1px 0);
+    .leftButtom{
+        width:.12rem;
+        height:.12rem;
+        @include border(2px 2px 0 0);
+        border-color: #c8c8cd;
+        transform: matrix(-.71,-.71,.71,-.71,0,0);
+        background: #fff;
+    }
+    .searchInput{
+        width:2.8rem;
+        height:.32rem;
+        background:#eee;
+        line-height:.32rem;
+        @include border-radius(.04rem);
+        @include flexbox();
+        @include flex-direction(row);
+        @include justify-content(space-between);
+        @include align-items(center);
+        font-size:.14rem;
+        padding:0 0 0 .08rem;
+        i{
+            font-size: .2rem;
+            color:#999;
+            margin-right:.1rem;
+        }
+        input{
+            width:2.7rem;
+            height:100%;
+            border:none;
+            border-top-right-radius: .04rem;
+            border-bottom-right-radius: .04rem;
+            background:#eee;
+            color:#666;
+        }
+    }
+}
+.requireMain{
+    background:#eee;
+    font-weight: 300;
+    .sticky-position{
+        width:100%;
+        height:.42rem;
+        top:.44rem;
+        left:0;
+        background: #fcfcfc;
+        z-index:100;
+        @include border(0 0 1px 0,#eee);
+        position: absolute;
+        .sticky-ul{
+            height: 100%;
+            @include flexbox();
+            @include justify-content(space-around);
+            position: relative;
+            li{
+                height:100%;
+                font-size:.14rem;
+                @include flexbox();
+                @include flex();
+                @include justify-content(space-around);
+                @include align-items(center);
+                > div{
+                    height:100%;
+                    @include flexbox();
+                    @include justify-content(space-around);
+                    @include align-items(center);
+                    a{
+                        color:#666;
+                        @include flexbox();
+                        @include justify-content(space-around);
+                        @include align-items(center);
+                        span{
+                            position: relative;
+                            width:0;
+                            &::after{
+                                content: "";
+                                display: block;
+                                width: 0;
+                                height: 0;
+                                background: transparent;
+                                border-left: 4px solid transparent;
+                                border-right: 4px solid transparent;
+                                border-top: 4px solid #909090;
+                            }
+                            &.active::after{
+                                border-top: 4px solid #ff6900;
+                            }
+                        }
+                    }
+                    .filter-city-shadow{
+                        position: absolute;
+                        top: .42rem;
+                        bottom: -20rem;
+                        left: 0;
+                        right: -1px;
+                        width: 100%;
+                        z-index: 100;
+                        display: none;
+                        .filter-city-content{
+                            z-index: 11;
+                            position: absolute;
+                            background: #eee;
+                            top: -.01rem;
+                            left: 0;
+                            width: 100%;
+                            height: 3.2rem;
+                            @include flexbox();
+                            @include flex-direction(row);
+                            @include justify-content(space-between);
+                            overflow: hidden;
+                            .city-level{
+                                background-color: #fff;
+                                max-height: 3.2rem;
+                               
+                            }
+                            .city-left{
+                                width:40%;
+                                height:100%;
+                                overflow-y: scroll;
+                                .city-ul{
+                                    width:100%;
+                                    @include flexbox();
+                                    @include flex-direction(column);
+                                    background:#fff;
+                                    li{
+                                        width:100%;
+                                        height:.4rem;
+                                        @include flexbox();
+                                        @include justify-content(flex-start);
+                                        @include align-items(center);
+                                        font-size: .14rem;
+                                        color: #333;
+                                        padding-left: .32rem;
+                                        @include border(0 0 1px 0,#eee,solid);
+    
+                                    }
+                                    .active{
+                                        color: #ff6900;
+                                    }
+                                }
+                                
+                            }
+                            .city-right{
+                                background: #eee;
+                                width: 60%;
+                                height:100%;
+                                overflow-y: scroll;
+                                .city{
+                                    width:100%;
+                                    @include flexbox();
+                                    @include flex-direction(column);
+                                    li{
+                                        width:100%;
+                                        height:.4rem;
+                                        @include flexbox();
+                                        @include justify-content(flex-start);
+                                        @include align-items(center);
+                                        font-size: .14rem;
+                                        color: #484848;
+                                        padding-left: .32rem;
+    
+                                    }
+                                    .active{
+                                        color: #ff6900;
+                                    }
+                                }
+                            }
+                        }
+                        .mask{
+                            width: 100%;
+                            height: 100%;
+                            background: rgba(0,0,0,.4);
+                        }
+                    }
+                }
+                .filter-extend{
+                    .active{
+                        color: #ff6900;
+                    }
+                }
+                .filters-extend-shadow{
+                    position: fixed;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    width: 100%;
+                    height:100%;
+                    z-index: 1001;
+                    display: none;
+                    .filter-extend-content{
+                        @include border(0 1px 0 0);
+                        position: fixed;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        width: 75%;
+                        z-index: 1002;
+                        background: #fff;
+                        .filter-extend-service{
+                            width:100%;
+                            height: 100%;
+                            @include flexbox();
+                            @include flex-direction(column);
+                            @include justify-content(space-between);
+                            
+                            .extend-list-content{
+                                @include flex();
+                                width:100%;
+                                @include flexbox();
+                                @include flex-direction(column);
+                                overflow-y: scroll;
+                                .extend-item-content{
+                                    @include border(0 0 1px 0);
+                                    &.active{
+                                        .extend-title{
+                                            .yo-ico{
+                                                transition: all 3s;
+                                                transform: rotate(0deg);
+                                            }
+                                        }
+                                    }
+                                    .extend-title{
+                                        cursor: pointer;
+                                        color: #444;
+                                        font-size: .14rem;
+                                        margin: .05rem .15rem 0 .15rem;
+                                        margin-left: .15rem;
+                                        line-height: .3rem;
+                                        text-overflow: ellipsis;
+                                        text-align: left;
+                                        @include flexbox();
+                                        @include flex-direction(row);
+                                        @include justify-content(space-between);
+                                        transition: all 3s;
+                                       .yo-ico{
+                                           transform: rotate(180deg);
+                                       }
+                                    }
+                                    .extend-content{
+                                        padding-bottom:.075rem;
+                                        .extend-list{
+                                            @include flexbox();
+                                            @include flex-direction(row);
+                                            @include justify-content(flex-start);
+                                            @include flex-wrap(wrap);
+                                            padding:0 .075rem;
+                                            width: 100%;
+                                            .extend-item{
+                                                cursor: pointer;
+                                                float: left;
+                                                width: 30%;
+                                                margin: 4px 1.3%;
+                                                height: .32rem;
+                                                line-height: .32rem;
+                                                border-radius: .02ewm;
+                                                background: #f7f7f7;
+                                                color: #484848;
+                                                font-size: .12rem;
+                                                text-align: center;
+                                                border: 1px solid transparent;
+                                            }
+                                            .active{
+                                                color: #ff6900;
+                                                background: #fff4ed;
+                                                border: 1px solid #ff6900;
+                                            }
+                                        }
+                                    }
+                                    
+                                }
+                            }
+                            .extend-bottom{
+                                height:.44rem;
+                                font-size: .16rem;
+                                @include border(1px 0 0 0);
+                                @include flexbox();
+                                @include flex-direction(row);
+                                @include justify-content(space-around);
+                                @include align-items(center);
+                                .extend-reset-btn{
+                                    color: #333;
+                                    border:none;
+                                    background:#fff;
+                                    width:100%;
+                                    height:100%;
+                                    @include border(0 1px 0 0);
+                                }
+                                .extend-sure-btn{
+                                    color: #ff6900;
+                                    border:none;
+                                    background:#fff;
+                                    width:100%;
+                                    height:100%;
+                                }
+                            }
+                        }
+                       
+                    }
+                    .mask{
+                        width: 100%;
+                        height: 100%;
+                        background: rgba(0,0,0,.4);
+                    }
+                }
+                a{
+                    color:#666;
+                }
+            }
+            .active{
+                color: #ff6900;
+            }
+        }
+    }
+    .load-more{
+        width:100%;
+        margin-top:.42rem;
+        @include flexbox();
+        @include flex-direction(column);
+        .load-more-body{
+            .search-block-shop{
+                @include flexbox();
+                @include flex-direction(column);
+                .shop-block{
+                    padding: .15rem;
+                    padding-bottom: .1rem;
+                    @include border(18px 0 0 0,#eee,solid);
+                    background: #fff;
+                    .shop-content{
+                        @include flexbox();
+                        @include flex-direction(row);
+                        @include justify-content(space-between);
+                        @include align-items(top);
+                        img{
+                            width:.7rem;
+                            height:.7rem;
+                            border-radius: .04rem;
+                            background: #eee;
+                        }
+                        .shop-info{
+                            width:2.65rem;
+                           div{
+                               height:.3rem;
+                               @include flexbox();
+                               @include flex-direction(row);
+                               @include justify-content(space-between);
+                               @include align-items(center);
+                               p{
+                                    font-size:.14rem;
+                                    color:#333;
+                               }
+                               .shop-city{
+                                    font-size: .12rem;
+                                    color: #999;
+                               }
+                           }
+                           .shop-labels{
+                               height:.24rem;
+                               @include flexbox();
+                               @include flex-direction(row);
+                               @include align-items(center);
+                               .shop-label{
+                                    padding: .01rem .03rem;
+                                    margin-bottom: .02rem;
+                                    font-size: .1rem;
+                                    color: #f0b348;
+                                    @include border(1px,#fce9c1,solid);
+                                    border-radius: .01rem;
+                                    margin-right: .03rem;
+                               }
+                           }
+                           .shop-tags-add{
+                               height:.2rem;
+                               @include flexbox();
+                               @include flex-direction(row);
+                               @include justify-content(flex-start);
+                               @include align-items(center);
+                               @include flex-wrap(wrap);
+                               overflow: hidden;
+                               .shop-tags-span{
+                                   color:#666;
+                                   font-size:.12rem;
+                               }
+                           }
+                           .shop-extra{
+                               color:#666;
+                               font-size:.12rem;
+                               @include border(1px 0 0 0,#eee,dashed);
+                               margin-top:.1rem;
+                               padding:.1rem 0 0;
+                           }
+                        }
+                    }
+                }
+                .shop-service-info{
+                    @include border(1px 0 0 0);
+                    padding:0 .15rem;
+                    background:#fff;
+                    a{
+                        padding: .1rem 0 .1rem .8rem;
+                        @include flexbox();
+                        @include flex-direction(row);
+                        @include justify-content(space-between);
+                        @include align-items(center);
+                        div{
+                            width:2.25rem;
+                            @include flexbox();
+                            @include flex-direction(column);
+                            @include justify-content(space-around);
+                            @include align-items(flex-start);
+                            .shop-service-title{
+                                color: #666;
+                                font-size: .14rem;
+                                width:100%;
+                                @include ellipsis(null, 1);
+                            }
+                            .shop-service-tags{
+                                .service-price{
+                                    color: #ff6900;
+                                    font-size: 12px;
+                                }
+                                .service-distance{
+                                    padding: 0 .06rem;
+                                    color: #eee;
+                                    font-size: .12rem;
+                                }
+                                .service-mount{
+                                    color: #999;
+                                    font-size: .12rem;
+                                }
+                            }
+                        }
+                        .shop-service-back{
+                            width: .08rem;
+                            height: .14rem;
+                            background-size: 100%;
+                            background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAYCAYAAAAh8HdUAAAAmUlEQVQ4jZXPuw3CQBAE0HcWoWkEOqEPJMgohQwkOnABUAk04gJMwkmW8f0m2UmeVhOGYegRMKpMhyOe2LagKz4tsMOEUwvsfjfCdw3sZn3CeQb7GrSErxRcoiq4hoowhbIwh5KwhFZhDVom1KCAG/Y4YCyhP0B+0yrIoSRIoSxYQ0WwRFUANjNwx64E4qcmENGlBUT0aAHwBb1iNy8ZmzmiAAAAAElFTkSuQmCC);
+                        }
+                    }    
+                }
+            }
+        }
+    }
+}

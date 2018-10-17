@@ -17,7 +17,7 @@ const render = async () => {
     loadLeftList(list);
     showRightContent(data);
     scroll();
-    await clickEvent();
+    clickEvent();
     
 }
 
@@ -27,7 +27,7 @@ const loadLeftList = (list) => {
     $('.content-left ul').html(html);
     $('.content-left ul li').eq(0).addClass('active');
 }
-const clickEvent = async () => {
+const clickEvent = () => {
     $('.content-left ul li').on("tap", async function(){
         $(this).addClass('active').siblings().removeClass('active');
         var key = $.trim($(this).text());
@@ -39,6 +39,10 @@ const clickEvent = async () => {
         scroll();
     });
     
+    $('.cate-content-list-hot').children().on("tap",function(){
+        
+
+    })
 }
 const showRightContent =  function(data) {
     let template = Handlebars.compile(categoryRightContentTpl);

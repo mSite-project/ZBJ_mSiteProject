@@ -1,0 +1,22 @@
+<div class="filter-extend-service">
+        <div class="extend-list-content">
+            {{#each list}}
+            <div class="extend-item-content active">
+                <p class="extend-title" data-navigationValueId="{{type}}">{{name}}
+                    <i class="yo-ico">&#xe607;</i>
+                </p>
+                <div class="extend-content">
+                    <div class="extend-list">
+                        {{#each properties}}
+                        <div class="extend-item" data-navigationValueId="{{labelId}}">{{labelName}}</div>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        <div class="extend-bottom">
+            <button class='extend-reset-btn'>重置</button>
+            <button class="extend-sure-btn">确认</button>
+        </div>
+    </div>

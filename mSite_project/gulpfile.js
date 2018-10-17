@@ -57,6 +57,14 @@ gulp.task('server', () => {
         proxy('/search', {
           target: 'https://m.zbj.com',
           changeOrigin: true
+        }),
+        proxy('/shop', {
+          target: 'https://m.zbj.com',
+          changeOrigin: true
+        }),
+        proxy('/city', {
+          target: 'https://m.zbj.com',
+          changeOrigin: true
         })
       ]
     }))
@@ -66,6 +74,12 @@ gulp.task('server', () => {
 gulp.task('copyhtml', () => {
   return gulp.src('./src/*.html')
     .pipe(gulp.dest('./dev/'))
+})
+
+//copy img
+gulp.task('copyimg',() => {
+  return gulp.src('./src/img/**/*')
+      .pipe(gulp.dest('./dev/img'))
 })
 
 // copy iconfonts
@@ -101,6 +115,6 @@ gulp.task('watch', () => {
 })
 
 // default task
-gulp.task('default', ['packscss', 'packjs', 'copyhtml', 'copyicons', 'copylibs', 'server', 'watch'], () => {
+gulp.task('default', ['packscss', 'packjs', 'copyhtml', 'copyicons','copyimg', 'copylibs', 'server', 'watch'], () => {
   console.log('all works!')
 })

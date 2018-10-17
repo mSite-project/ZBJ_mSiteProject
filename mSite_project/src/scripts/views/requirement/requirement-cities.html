@@ -1,0 +1,15 @@
+<ul class="city">
+    {{#if cityList}}
+        {{#each cityList}}
+            <li class="city-item" data-cityId="{{cityId}}" data-provinceId="{{provinceId}}">
+                {{cityName}}
+            </li>
+        {{/each}}
+        {{/if}}
+    {{#if local}}
+        <li class="city-item">
+            {{local}}
+        </li>
+    {{/if}}
+    
+</ul>

@@ -29,6 +29,7 @@
     nav{
         height:.44rem;
         background: #fff;
+        z-index: 10;
         @include boxShadow(0,0,.16rem,.06rem,#eee);
         ul{
             height:100%; 

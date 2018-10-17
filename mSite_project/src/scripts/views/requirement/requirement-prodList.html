@@ -1,0 +1,72 @@
+<div class="search-block-shop">
+    {{#each list}}
+       
+    <div class="shop-block">
+        <a href="##">
+            <div class="shop-content">
+                <img src="{{shopPhoto}}" alt="">
+                <div class="shop-info">
+                    <div>
+                        <p>{{brandName}}</p>
+                        <span class="shop-city">
+                            {{cityName}}
+                        </span>
+                    </div>
+                    <p class="shop-labels">
+                        {{#compare userType 2}}
+                        <span class="shop-label">  企业</span>
+                        {{/compare}}
+                        {{#compare userType 1}}
+                        <span class="shop-label">  个人</span>
+                        {{/compare}}
+                        <span class="shop-label">{{abilityVO.abilityName}}</span>
+                        
+                    </p>
+                    <div class="shop-tags-add">
+                        {{#each expertTagNames}}
+                        <span class="shop-tags-span">
+                                <span class="shop-tag">{{this}}</span>
+                                <span class="shop-instance">&nbsp;|&nbsp;</span>
+                        </span>
+                        {{/each}}
+                      
+                    </div>
+                    <p class="shop-extra">
+                        <span class="shop-trade">
+                            <span class="item-glance item-data">
+                                <span class="color-title">雇主回头率&gt;</span><span></span>
+                                {{#formatPercent secondGlance 1}}
+                                <span>{{this}}%同行,</span>
+                                {{/formatPercent}}
+                            </span><span class="item-data"> <span class="color-title">收入</span>
+                                {{#formatPercent lastQuarterIncome 2}}
+                                <span>{{this}}万,</span>
+                                {{/formatPercent}}
+                            </span><span class="item-data"><span class="color-title">诚信分</span> <span>{{integrity}}</span> </span>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </a>
+    </div>
+    {{#if services}}
+        {{#each services}}
+        <div class="shop-service-info">
+                <div >
+                    <a href="/shop/7163110/sid-1317098.html" class="servie-div">
+                        <div>
+                            <p class="shop-service-title">{{title}}</p>
+                            <p class="shop-service-tags">
+                                <span data-v-7578017e="" class="service-price">￥{{appPrice}}</span>
+                                <span class="service-distance">&nbsp;|&nbsp;</span>
+                                <span class="service-mount">成交量 {{saleCount}}</span>
+                            </p>
+                        </div>
+                        <p class="shop-service-back"></p>
+                    </a>
+                </div>
+            </div>
+        {{/each}}
+    {{/if}}
+    {{/each}}
+</div>
