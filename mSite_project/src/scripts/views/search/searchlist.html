@@ -1,0 +1,19 @@
+{{#each list}}
+<li data-id={{caseId}}>
+        <a>
+            <div >
+                <img src={{coverFileUrl}}>
+            </div>
+            <div>
+                <p>{{title}}</p>
+                <p><i>￥</i>{{amount}}</p>
+            </div>
+            <div>
+                <p>企业</p>
+                <p> {{brandname}} </p>
+                <p>{{cityName}}</p>
+            </div>
+        </a>
+    </li>
+{{/each}}
+<div class="sealist-load">加载更多</div>

@@ -7,6 +7,7 @@ import searchController from "./controllers/search/search.js";
 import profileController from "./controllers/profile/profile.js";
 
 homeController.render();
+localStorage.clear();
 const router = new Router()
 router.init()
 router.route('#home', homeContentController.render)

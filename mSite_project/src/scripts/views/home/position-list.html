@@ -1,0 +1,20 @@
+{{#each list}}
+<div class='li'>
+    <img src="{{imgUrl}}" alt="">
+    <div class="con">
+        <ul class="top">
+            <li>{{title}}</li>
+            <li>成交<i>{{saleCount}}</i>服务评价<em>{{comprehensiveScore}}
+                </em></li>
+            <li>¥<i>{{price}}</i>/<em>{{unit}}</em></li>
+        </ul>
+        <div class="bottom">
+            <div class="col">
+                <img src="{{shopPhoto}}" alt="">
+                <span>{{shopName}}</span>
+            </div>
+            <i>{{provinceName}}</i>
+        </div>
+    </div>
+</div>
+{{/each}}

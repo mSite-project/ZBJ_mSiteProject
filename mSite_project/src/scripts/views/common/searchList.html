@@ -1,0 +1,15 @@
+<div class="shop-search">
+    <i  class="icon icon-shop"></i>
+    <a href="##" class="">搜索
+        <i class="Italic"> </i>
+            相关内容
+    </a>
+</div>
+<ul class="relation-list">
+    {{#each searchResult}}
+    <li class="relation-item">
+        <a href="javascript:void(0)" class="search" data-id="{{count}}"> {{keyword}}</a>
+        <i class="yo-ico">&#xe629;</i>
+    </li>
+    {{/each}}
+</ul>

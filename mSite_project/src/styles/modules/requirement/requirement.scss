@@ -357,6 +357,7 @@ header{
                                p{
                                     font-size:.14rem;
                                     color:#333;
+                                    @include ellipsis(null, 1);
                                }
                                .shop-city{
                                     font-size: .12rem;

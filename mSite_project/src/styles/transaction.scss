@@ -1,0 +1,261 @@
+@import './yo/usage/core/reset';
+@import '../libs/swiper.min.css';
+#root{
+    width:100%;
+    height:100%;
+    overflow-y: scroll;
+}
+@font-face {
+    font-family: 'iconfont';
+    src: url('./../iconfonts/iconfont.eot');
+    src: url('./../iconfonts/iconfont.eot?#iefix') format('embedded-opentype'),
+    url('./../iconfonts/iconfont.woff') format('woff'),
+    url('./../iconfonts/iconfont.ttf') format('truetype'),
+    url('./../iconfonts/iconfont.svg#iconfont') format('svg');
+  }
+  .yo-ico{
+    font-family:"iconfont" !important;
+    font-size:16px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+  }
+.transaction-head{
+    position: fixed;
+    background: #fff;
+    height: 0.44rem;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+.tran-head-title{
+    font-size: 0.16rem;
+    color: #333;
+    text-align: center;
+    line-height: 0.44rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 70%;
+    margin: 0 auto;
+}
+.tran-head-btn{
+    position: absolute;
+    font-size: 0.14rem;
+    color: #7e7e7e;
+    line-height: 0.44rem;
+    height: 0.44rem;
+    font-weight: 600;
+    a{
+        color: #333;
+        span{
+            
+            font-size: 0.16rem;
+        }
+    }
+    a::before{
+        content:"";
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        border-left: 1px solid #333;
+        border-bottom: 1px solid #333;
+        -webkit-transform: translate(0,-12%) rotate(50deg);
+        transform: translate(0,-12%) rotate(50deg);
+        margin-left:0.1rem;
+    }
+}
+.transaction-search{
+    width:100%;
+    padding:0.14rem 0;
+    margin-top:0.44rem;
+    .tran-cont-search{
+        padding:0 0.11rem;
+        @include flexbox();
+        .tran-search-form{
+            width:82%;
+            position: relative;
+            i{
+                position: absolute;
+                left: 0.1rem;
+                top: .05rem;
+
+                color: #c3c3c3;
+            }
+            .tran-search-area{
+                height: 0.32rem;
+                background-color: #fff;
+                border: none;
+                border-radius: 0.5rem;;
+                padding: 0 .11rem;
+                width: 100%;
+                font-size: 0.14rem;
+                text-indent: 0.2rem;
+            } 
+        }
+        .tran-search-cancel{
+            font-size: 0.14rem;
+            width: 16%;
+            text-align: center;
+            line-height: 0.32rem;
+            color: #f9490b;
+            background: #fff;
+            border-radius: 0.5rem;
+            padding: 0 .06rem;
+            margin-left: 0.08rem;
+            a{
+                color:#f9490b;
+            }
+        }
+    }
+}
+.transaction-market-box{
+    overflow: hidden;
+    position: relative;
+    background-color: #fff;
+    .swiper-slide {
+        float: left;
+    }
+    .transaction-item {
+        text-align: left;
+        padding: .1rem .1rem .14rem;
+        .transaction-info {
+            display: block;
+            position: relative;
+            width: 100%;
+            height: 100%;
+            ul{
+                li {
+                    margin: .06rem 0;
+                    float: left;
+                    width: 25%;
+                    height: 0.8rem;
+                    text-align: center;
+                    a{
+                        img{
+                            width:0.43rem;
+                            height:0.43rem;
+                        }
+                        p{
+                            color: #333;
+                            font-size: .13rem;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                            -webkit-box-orient: vertical;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.transaction-main{
+    margin-top:0.1rem;
+    .tranc-loading{
+        width:100%;
+        height:5rem;
+        overflow: hidden;
+        text-align: center;
+        background:#f4f4f4;
+        img{
+            width:0.2rem;
+            height:0.2rem;
+
+        }
+    }
+    ul{
+        .transaction-main-item {
+            padding: .15rem .14rem .14rem;
+            background: #fff;
+            margin: .1rem 0;
+            .top-title{
+                @include flexbox();
+                @include justify-content(space-between);
+                .title {
+                    font-size: .14rem;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+                .market-btn {
+                    padding: .02rem .04rem;
+                    color: #999;
+                    font-size: .1rem;
+                    @include border(1px 1px 1px 1px ,#e5e5e5, solid,0.05rem);
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space: nowrap;
+                }
+            } 
+            .top-info {
+                @include border(0 0 1px 0, #e5e5e5, solid);
+                padding: .1rem 0 .12rem;
+                @include flexbox();
+                @include justify-content(space-between);
+                @include align-items(center);
+                .price {
+                    font-size: .16rem;
+                    float: left;
+                    color: #f60;
+                    font-family: "PingFangSC-Semibold, sans-serif, DroidSansFallback";
+                    b{
+                        font-weight: normal;
+                    }
+                }
+                .end,.partake{
+                    font-size: .12rem;
+                    color: #a8a8a8;
+                }
+                p:first-child{
+                    width:50%;
+                }
+                p:nth-child(2){
+                    width:25%;
+                    text-align: right;
+                }
+                p:nth-child(3){
+                    width:25%;
+                    text-align: right;
+                }
+            }
+            .content {
+                .text {
+                    font-size: .14rem;
+                    color: #666;
+                    position: relative;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    font-family: "PingFangSC-Semibold, sans-serif, DroidSansFallback";
+                    margin-top: .15rem;
+                    -webkit-line-clamp: 2;
+                    display: -webkit-box;
+                    -webkit-box-orient: vertical;
+                    height: 0.42rem;
+                }
+                .state-list {
+                    padding: .04rem 0;
+                    margin-top: .05rem;
+                    .state.bid-status-2 {
+                        background-color: #45bbff;
+                        color: #fff;
+                    }
+                    .state {
+                        font-size: .1rem;
+                        color: #3d3d3d;
+                        background: #f2f7f9;
+                        padding: .02rem .1rem;
+                        border-radius: .05rem;
+                    }
+                }
+            }
+        }
+    } 
+}  
+.transaction-load{
+    margin:0 auto;
+    height:0.5rem;
+    text-align: center;
+    background:#cacaca;
+    line-height: 0.5rem;
+}

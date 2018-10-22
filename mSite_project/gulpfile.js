@@ -11,16 +11,20 @@ gulp.task('packjs', () => {
     .pipe(webpack({
       mode: 'development',
       entry: {
-        app: ['@babel/polyfill', './src/scripts/app.js']
+        app: ['@babel/polyfill', './src/scripts/app.js'],
+        appHot: ['@babel/polyfill', './src/scripts/appHot.js'],
+        appCateDetails: ['@babel/polyfill', './src/scripts/appCateDetails.js'],
+        tran: ['@babel/polyfill', './src/scripts/tran.js'],
+        industry: ['@babel/polyfill', './src/scripts/industry.js'],
+        service: ['@babel/polyfill', './src/scripts/service.js']
       },
       output: {
-        filename: 'app.js'
+        filename: '[name].js',
       },
       module: {
-        rules: [
-          {
+        rules: [{
             test: /\.html$/,
-            use: [ 'string-loader' ]
+            use: ['string-loader']
           },
           {
             test: /\.js$/,
@@ -41,7 +45,7 @@ gulp.task('packjs', () => {
 
 // 编译sass
 gulp.task('packscss', () => {
-  return gulp.src('./src/styles/app.scss')
+  return gulp.src('./src/styles/*.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('./dev/styles'))
 })
@@ -62,8 +66,30 @@ gulp.task('server', () => {
           target: 'https://m.zbj.com',
           changeOrigin: true
         }),
+        proxy('/getHotWord', {
+          target: 'https://m.zbj.com',
+          changeOrigin: true
+        }),
         proxy('/city', {
           target: 'https://m.zbj.com',
+          changeOrigin: true
+        }),
+        proxy('/shunt', {
+          target: 'https://m.zbj.com',
+          changeOrigin: true
+        }),
+        proxy('/api', {
+          target: 'http://localhost:3000',
+          changeOrigin: true
+        }),
+        //https://m.zbj.com/case/search/v2/
+        proxy('/case', {
+          target: "https://m.zbj.com",
+          changeOrigin: true
+        }),
+        proxy('/hallapi', {
+          //https://task.zbj.com/hallapi/v/index/list?cndr=&pageNum=2&pageSize=15
+          target: "https://task.zbj.com",
           changeOrigin: true
         })
       ]
@@ -77,9 +103,9 @@ gulp.task('copyhtml', () => {
 })
 
 //copy img
-gulp.task('copyimg',() => {
+gulp.task('copyimg', () => {
   return gulp.src('./src/img/**/*')
-      .pipe(gulp.dest('./dev/img'))
+    .pipe(gulp.dest('./dev/img'))
 })
 
 // copy iconfonts
@@ -107,7 +133,7 @@ gulp.task('watch', () => {
   // 缺点：某些操作系统不支持
   gulp.watch('./src/styles/**/*', ['packscss'])
   gulp.watch('./src/libs/**/*', ['copylibs'])
-  
+
   // watch('./src/mock/**/*', () => {
   //   gulp.start(['copymock'])
   // })
@@ -115,6 +141,6 @@ gulp.task('watch', () => {
 })
 
 // default task
-gulp.task('default', ['packscss', 'packjs', 'copyhtml', 'copyicons','copyimg', 'copylibs', 'server', 'watch'], () => {
+gulp.task('default', ['packscss', 'packjs', 'copyhtml', 'copyicons', 'copyimg', 'copylibs', 'server', 'watch'], () => {
   console.log('all works!')
 })

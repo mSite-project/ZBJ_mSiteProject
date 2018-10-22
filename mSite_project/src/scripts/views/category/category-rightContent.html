@@ -1,42 +1,41 @@
-
-    {{#if data}}
-        <div class="cate-content-banner">
-            <a href="##">
-                <img src='{{data.bannerPicPath}}' alt="">
+{{#if data}}
+<div class="cate-content-banner">
+    <a href="##">
+        <img src='{{data.bannerPicPath}}' alt="">
+    </a>
+</div>
+{{#each data.blocks}}
+<div class="cate-content-block">
+    <div class="cate-content-title">{{name}}</div>
+    {{#if showType}}
+    {{#compare showType 2}}
+    <ul class="cate-content-list-hot">
+        {{#each contents}}
+        <li data-targetParam="{{targetInfo.targetParam1}}">
+            <a href="javascript:void(0)">
+                <img src="{{pic}}" alt="">
+                <span>{{text}}</span>
             </a>
-        </div>
-        {{#each data.blocks}}
-        <div class="cate-content-block">
-            <div class="cate-content-title">{{name}}</div>
-            {{#if showType}}
-                {{#compare showType 2}}
-            <ul class="cate-content-list-hot">
-                {{#each contents}}
-                <li data-targetParam="{{targetInfo.targetParam1}}">
-                    <a href="javascript:void(0)">
-                        <img src="{{pic}}" alt="">
-                        <span>{{text}}</span>
-                    </a>
-                </li>
-               {{/each}}
-            </ul>
-                {{/compare}}
-                {{#compare showType 1}}
-            <ul class="cate-content-list">
-                    {{#each contents}}
-                <li  data-targetParam="{{targetInfo.targetParam1}}">
-                    <a href="javascript:void(0)">
-                        <span>{{text}}</span>
-                    </a>
-                </li>
-                {{/each}}
-            </ul>
-                {{/compare}}
-            {{/if}}
-        </div>
+        </li>
         {{/each}}
+    </ul>
+    {{/compare}}
+    {{#compare showType 1}}
+    <ul class="cate-content-list">
+        {{#each contents}}
+        <li data-targetParam="{{targetInfo.targetParam1}}">
+            <a href="javascript:void(0)">
+                <span>{{text}}</span>
+            </a>
+        </li>
+        {{/each}}
+    </ul>
+    {{/compare}}
     {{/if}}
-        <!-- <div class="cate-content-block">
+</div>
+{{/each}}
+{{/if}}
+<!-- <div class="cate-content-block">
             <div class="cate-content-title">设计热搜</div>
             <ul class="cate-content-list">
                 <li>
@@ -104,31 +103,30 @@
                 </li>
             </ul>
         </div> -->
-        
-        <div class="cate-content-block">
-            <div class="cate-content-title">热门服务</div>
-            <div class="cate-content-loadmore">
-                <ul>
-                    {{#each moreDataSource}}
-                    <li>
-                        <a href="javascript:void(0)" class="item-img">
-                            <img src="{{imgUrl}}" alt="">
-                        </a>
-                        <div class="item-content">
-                            <div class="item-content-title"> 
-                                    {{title}}
-                            </div>
-                            <div class="item-content-bottom">
-                                <div class="item-content-price">
-                                    <span class="price-number">￥{{priceShow}}</span>
-                                    <span class="price-util">/{{unit}}</span>
-                                </div>
-                                <div class="item-content-city">{{cityName}}</div>
-                            </div>
+
+<div class="cate-content-block">
+    <div class="cate-content-title">热门服务</div>
+    <div class="cate-content-loadmore">
+        <ul>
+            {{#each moreDataSource}}
+            <li>
+                <a href="javascript:void(0)" class="item-img">
+                    <img src="{{imgUrl}}" alt="">
+                </a>
+                <div class="item-content">
+                    <div class="item-content-title">
+                        {{title}}
+                    </div>
+                    <div class="item-content-bottom">
+                        <div class="item-content-price">
+                            <span class="price-number">￥{{priceShow}}</span>
+                            <span class="price-util">/{{unit}}</span>
                         </div>
-                    </li>
-                    {{/each}}
-                </ul>
-            </div>
-        </div>
-        
+                        <div class="item-content-city">{{cityName}}</div>
+                    </div>
+                </div>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>

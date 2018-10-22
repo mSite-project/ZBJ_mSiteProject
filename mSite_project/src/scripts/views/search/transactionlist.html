@@ -1,0 +1,30 @@
+{{#each list}}
+<li class="transaction-main-item">
+    <div class="transaction-main-top">
+        <div class="top-title">
+            <div class="title">{{title}}</div>
+            <div class="market-btn">
+                {{specialMarketName}}
+            </div>
+        </div>
+        <div class="top-info">
+            <p class="price"><i>￥</i><b>{{price}}</b></p>
+            <p class="end"><span class="orange">{{selectEndTime}}</span>天后截止</p>
+            <p class="partake"><span class="orange">{{allowBidNum}} </span>投标机会</p>
+
+        </div>
+    </div>
+    <div class="content">
+        <p class="text">
+            {{content}}
+        </p>
+        <div class="state-list">
+            <span class="state bid-status-2">投标中</span>
+            <span class="state">招标</span>
+            <span class="state">已托管</span>
+            <span class="state">{{categoryName}}</span>
+        </div>
+    </div>
+</li>
+{{/each}}
+<div class="transaction-load">加载更多</div>
